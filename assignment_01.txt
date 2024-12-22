@@ -1,29 +1,30 @@
-1.SELECT COUNT(*) AS "total number of employees"FROM emp;
-2.SELECT COUNT(*) AS "total number of departments"FROM dept;
-3.select*from emp
-4.select*from dept
-5.select sum(sal) as "total salary paid for employees" from emp
-6.select sum(COMM) as "total commission paid to all employees" from emp
-7.select job from emp where comm>0;
-8.select sysdate from dual;
-9.select avg(sal) as "average salary paid for employees" from emp;
-11.select deptno, sum(sal) from emp group by deptno;
-12.select job , count(*) from emp group by job;
-13.select job , avg(sal) from emp group by job;
-14.select ename , hiredate from emp;
-15.select ename , deptno from emp order by deptno;
-16.select ename , job from emp order by job;
-17.select ename,sal from emp order by sal desc;
-18.select ename,deptno,sal from emp order by deptno asc,sal desc;
-19.select count(*) from emp where length(ename) = 6;
-20.select max(sal) , min(sal) from emp;
-21.select deptno, max(sal), min(sal), avg(sal) , sum(sal) from emp group by deptno;
-22.select ename,hiredate from emp order by hiredate;
-23.select *from emp order by hiredate desc fetch first 1 row only;
-24.select *from emp order by hiredate asc fetch first 1 row only;
-25.select ename, hiredate,deptno from emp order by hiredate desc , deptno asc;
-26.select ename ,sal from emp where sal>= (select avg(sal) from emp);
-27.select ename ,sal from emp where sal<= (select avg(sal) from emp);
-28.select ename,sal from emp where sal>2000 and sal < 4000;
-29.select *from emp where sal = (select max(sal) from emp)union all select *from emp where sal = (select min(sal) from emp);
-30.select count(*) from emp where to_char(hiredate, 'MON') = 'JAN'
+SELECT COUNT(*) AS "total number of employees"FROM emp;
+SELECT COUNT(*) AS "total number of departments"FROM dept;
+select*from emp
+select*from dept
+select sum(sal) as "total salary paid for employees" from emp
+select sum(COMM) as "total commission paid to all employees" from emp
+select job from emp where comm>0;
+select sysdate from dual;
+select avg(sal) as "average salary paid for employees" from emp;
+select deptno, sum(sal) from emp group by deptno;
+select job , count(*) from emp group by job;
+select deptno, sum(sal) from emp group by deptno;
+select job , avg(sal) from emp group by job;
+select ename , hiredate from emp;
+select ename , deptno from emp order by deptno;
+select ename , job from emp order by job;
+select ename,sal from emp order by sal desc;
+select ename,deptno,sal from emp order by deptno asc,sal desc;
+select count(*) from emp where length(ename) = 6;
+select max(sal) , min(sal) from emp;
+select deptno, max(sal), min(sal), avg(sal) , sum(sal) from emp group by deptno;
+select ename,hiredate from emp order by hiredate;
+select *from emp order by hiredate desc fetch first 1 row only;
+select *from emp order by hiredate asc fetch first 1 row only;
+select ename, hiredate,deptno from emp order by hiredate desc , deptno asc;
+select ename ,sal from emp where sal>= (select avg(sal) from emp);
+select ename ,sal from emp where sal<= (select avg(sal) from emp);
+select ename,sal from emp where sal>2000 and sal < 4000;
+select *from emp where sal = (select max(sal) from emp)union all select *from emp where sal = (select min(sal) from emp);
+select count(*) from emp where to_char(hiredate, 'MON') = 'JAN'
